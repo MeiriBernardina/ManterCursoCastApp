@@ -10,6 +10,9 @@ import { PaymentDetailsComponent } from './payment-details/payment-details.compo
 import { PaymentDetailFormComponent } from './payment-details/payment-detail-form/payment-detail-form.component';
 import { HttpClientModule } from '@angular/common/http';
 import { CursoDetalheComponent } from './curso-detalhe/curso-detalhe.component';
+import { AppRoutingModule } from './app-routing.module';
+import { HomeComponent } from './home/home.component';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
 
 @NgModule({
   declarations: [
@@ -17,14 +20,21 @@ import { CursoDetalheComponent } from './curso-detalhe/curso-detalhe.component';
     PaymentDetailsComponent,
     PaymentDetailFormComponent,
     CursoDetalheComponent,
-    FormComponent
+    FormComponent,
+    HomeComponent
+
+
+
+
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    ToastrModule.forRoot()
+    ToastrModule.forRoot(),
+    AppRoutingModule,
+    Ng2SearchPipeModule
   ],
   providers: [],
   bootstrap: [AppComponent]

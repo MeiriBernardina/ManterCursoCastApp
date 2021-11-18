@@ -3,6 +3,9 @@ import { Component, OnInit } from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
 import { CursoService } from 'src/app/shared/curso.service';
 import { NgForm } from '@angular/forms';
+import { HttpClient } from '@angular/common/http';
+
+
 
 @Component({
   selector: 'app-form',
@@ -12,11 +15,22 @@ import { NgForm } from '@angular/forms';
   ]
 })
 export class FormComponent implements OnInit {
-
+  filter: string = "";
+  cursosURL:'https://localhost:44351/api/Cursoes'
+  cursos:any;
+  http: any;
  constructor(public service: CursoService,
     private toastr: ToastrService) { }
 
   ngOnInit(): void {
+    this.service.refreshList();
+    this.getCursos();
+  }
+
+  getCursos(){
+    this.http.get(this.cursosURL).subscribe((response: any) => {this.cursos= response
+       },(error: any) =>{console.log(error)})
+
   }
 
   onSubmit(form: NgForm) {

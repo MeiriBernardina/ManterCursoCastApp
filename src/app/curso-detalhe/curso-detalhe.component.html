@@ -24,9 +24,9 @@
                   <td (click)="populateForm(pd)">{{pd.dataInicio}}</td>
                   <td (click)="populateForm(pd)">{{pd.dataTermino}}</td>
                   <td (click)="populateForm(pd)">{{pd.qtdAlunosTurma}}</td>
-                  <td (click)="populateForm(pd)">{{pd.nomeCategoria}}</td>
+                  <td (click)="populateForm(pd)">{{pd.categoriaId}}</td>
                   <td>
-                      
+
                       <i class="far fa-trash-alt fa-lg text-danger" (click)="onDelete(pd.cursoId)"></i>
                   </td>
               </tr>
@@ -35,3 +35,4 @@
   </div>
 </div>
 
+<div class="col"><router-outlet></router-outlet></div>

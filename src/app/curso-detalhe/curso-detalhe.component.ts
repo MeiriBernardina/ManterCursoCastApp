@@ -29,7 +29,7 @@ export class CursoDetalheComponent implements OnInit {
         .subscribe(
           res => {
             this.service.refreshList();
-            this.toastr.error("Curso salvo com sucesso.", 'Detalhe do curso registrado.');
+            this.toastr.error("Curso deletado com sucesso.", '');
           },
           err => { console.log(err) }
         )

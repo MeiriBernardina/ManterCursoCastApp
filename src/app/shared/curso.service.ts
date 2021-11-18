@@ -7,6 +7,16 @@ import { HttpClient } from "@angular/common/http";
 })
 export class CursoService {
 
+/*   getCursos() {
+    return [
+     new Curso('Multiplataforma'),
+     new Curso('Banco de dados'),
+     new Curso('Metodologia'),
+     new Curso('Comportamento'),
+     new Curso('Comunicacao')
+     ];
+   }
+ */
 
   constructor(private http: HttpClient) { }
 

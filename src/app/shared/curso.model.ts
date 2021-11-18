@@ -4,6 +4,6 @@ export class Curso {
   dataInicio: string='';
   dataTermino: string='';
   qtdAlunosTurma: string='';
-  nomeCategoria: string='';
+  categoriaId: number;
 
 }
