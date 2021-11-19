@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
 import { Curso } from '../shared/curso.model';
@@ -12,11 +13,22 @@ import { CursoService } from '../shared/curso.service';
 })
 export class CursoDetalheComponent implements OnInit {
 
+  filter: string = "";
+  cursosURL:'https://localhost:44351/api/Cursoes'
+  cursos:any;
+
  constructor(public service: CursoService,
-    private toastr: ToastrService) { }
+    private toastr: ToastrService, public http: HttpClient) { }
 
   ngOnInit(): void {
     this.service.refreshList();
+    this.getCursos();
+  }
+
+  getCursos(){
+    this.http.get(this.cursosURL).subscribe((response: any) => {this.cursos= response
+       },(error: any) =>{console.log(error)})
+
   }
 
   populateForm(selectedRecord: Curso) {
